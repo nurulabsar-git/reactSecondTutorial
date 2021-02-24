@@ -19,6 +19,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <div>
+      <input className="form-control" placeholder="Recipient's username" type="text"/> 
+      
+      </div>
         <Users></Users>
         <Counter></Counter>
      <h1>List</h1>
@@ -61,21 +65,21 @@ function App() {
 }
 
 function Users(){
-  const [users, setUsers] = useState([]);
+  const [test, setTest] = useState([]);
   useEffect(()=>{
     // console.log('Calling Effect')
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(result => result.json())
     //  .then(jsonData => console.log(jsonData));
-    .then(jsonData => setUsers(jsonData));
+    .then(jsonData => setTest(jsonData));
   }, [])
 
  return(
    <div>
-     <h3>Dynamic Data: {users.length}</h3>
+     <h3>Dynamic Data: {test.length} </h3>
      <ol>
        {
-         users.map(user => <li>Name: {user.name} Email: {user.email}</li>)
+         test.map(user => <li>Name: {user.name} Email: {user.email}</li>)
        }
      </ol>
      {/* {
@@ -138,7 +142,7 @@ function YourGrocery(props){
     <h1>Price: {price}</h1>
     <p>Color: {color}</p>
     <p>Made in {made}</p>
-    <button>Buy Now</button>
+    <button>Buy Now </button>
   </div>
 
   </section>)
